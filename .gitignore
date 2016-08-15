@@ -4,12 +4,6 @@ ehthumbs.db
 Desktop.ini
 
 # My configurations:
-profiles_settings.xml
-Project_Default.xml
-misc.xml
-modules.xml
-sqldialects.xml
-workspace.xml
-XYCinema.iml
+/.idea/
 db.ini
 deploy_key_rsa
