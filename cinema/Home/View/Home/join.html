@@ -1,0 +1,57 @@
+<extend name="./base"/>
+<block name="content">
+    <title>加入我们 - 想映电影</title>
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="col-md-offset-1">加入我们</h2><br/>
+                    <hr class="redhr"/>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <ul class="list-group" id="joincitylist">
+                    <foreach name="areas" item="area">
+                        <a href="__MODULE__/Home/join/area/{$area.e_area}" class="list-group-item">{$area.e_area}</a>
+                    </foreach>
+                </ul>
+            </div>
+            <div class="col-md-9 text-center">
+                <table class="table" id="jointable">
+                    <thead>
+                    <tr>
+                        <th>职位</th>
+                        <th>招聘人数</th>
+                        <th>地点</th>
+                        <th>发布时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <foreach name="employs" item="employ">
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-link postlink" title="职位描述"
+                                        data-container="body" data-toggle="popover" data-placement="right"
+                                        data-content="{$employ.e_descride}">
+                                {$employ.e_post}
+                                </button>
+                            </td>
+                            <td>{$employ.e_num}</td>
+                            <td>{$employ.e_area}</td>
+                            <td>{$employ.e_modifiedon}</td>
+                        </tr>
+                    </foreach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        $(function (){
+            $(".postlink").popover();
+        });
+    </script>
+</block>

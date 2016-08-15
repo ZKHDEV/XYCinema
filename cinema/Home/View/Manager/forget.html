@@ -1,0 +1,41 @@
+<extend name="./base"/>
+<block name="content">
+    <title>忘记密码 - 想映电影院</title>
+
+    <div class="container">
+        <p><h1 style="font-weight:300">忘记密码</h1></p><hr/>
+        <div class="col-md-6">
+            <form id="forgetform" class="form-horizontal" action="" method="post" autocomplete="off" onsubmit="return checkregister();">
+                <div class="form-group">
+                    <label for="phone" class="col-md-3 control-label">手机号*</label>
+                    <div class="col-md-9">
+                        <input type="text" id="phone" class="form-control" autofocus name="u_phone" maxlength="11">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-md-3 control-label">电子邮箱*</label>
+                    <div class="col-md-9">
+                        <input type="text" id="email" class="form-control" name="u_email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="verify" class="col-md-3 control-label">验证码*</label>
+                    <div class="col-md-6">
+                        <input type="text" id="verify" class="form-control" name="verify" maxlength="4">
+                    </div>
+                    <div class="col-md-3" style="margin-top: -20px">
+                        <a href="#"><img class="verifyimg" style="margin-top: 20px" src="__CONTROLLER__/verifyImg"
+                                         onclick="this.src='__CONTROLLER__/verifyImg/' + Math.random()"/></a>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 30px;margin-left: 140px">
+                    <button type="submit" class="btn btn-success btn-lg">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script src="{$Think.const.JS_URL}/jquery.validate.min.js"></script>
+    <script src="{$Think.const.JS_URL}/validate.js"></script>
+</block>

@@ -1,0 +1,10 @@
+[ 2016-08-13T18:27:16+08:00 ] 127.0.0.1 /images/2014/05/21/04a60.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.047538s ]
+
+[ 2016-08-13T18:27:17+08:00 ] 127.0.0.1 /images/2014/05/11/17b6b45.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+

@@ -1,0 +1,15 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# My configurations:
+profiles_settings.xml
+Project_Default.xml
+misc.xml
+modules.xml
+sqldialects.xml
+workspace.xml
+XYCinema.iml
+db.ini
+deploy_key_rsa

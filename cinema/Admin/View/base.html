@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+<!-- BEGIN HEAD -->
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>想映电影后台管理系统</title>
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <meta content="" name="description" />
+
+    <meta content="" name="author" />
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/style-metro.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/style.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+    <link href="{$Think.const.ADMIN_CSS_URL}/site.css" rel="stylesheet" type="text/css"/>
+
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <link rel="shortcut icon" href="{$Think.const.PUBLIC_IMG_URL}/logo.ico" />
+
+</head>
+
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body>
+
+<block name="content">内容</block>
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+<!-- BEGIN CORE PLUGINS -->
+
+<script src="{$Think.const.ADMIN_JS_URL}/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+<script src="{$Think.const.ADMIN_JS_URL}/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+<script src="{$Think.const.ADMIN_JS_URL}/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+
+<script src="{$Think.const.ADMIN_JS_URL}/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="{$Think.const.ADMIN_JS_URL}/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+<script src="{$Think.const.ADMIN_JS_URL}/jquery.blockui.min.js" type="text/javascript"></script>
+
+<script src="{$Think.const.ADMIN_JS_URL}/jquery.cookie.min.js" type="text/javascript"></script>
+
+<script src="{$Think.const.ADMIN_JS_URL}/jquery.uniform.min.js" type="text/javascript" ></script>
+
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+<script src="{$Think.const.ADMIN_JS_URL}/app.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
+
+<script>
+
+    jQuery(document).ready(function() {
+
+        App.init(); // initlayout and core plugins
+
+    });
+
+</script>
+
+<block name="script">javascript</block>
+
+<!-- END JAVASCRIPTS -->
+
+</body>
+
+<!-- END BODY -->
+
+</html>

@@ -1,0 +1,51 @@
+<extend name="./base"/>
+<block name="content">
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            职位详情
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>
+
+                <a href="__CONTROLLER__/index">职位管理</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>职位详情</li>
+
+        </ul>
+
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+    </div>
+
+    <div style="margin: 50px">
+        <h4>职位：{$employ.e_post}</h4>
+        <h4>人数：{$employ.e_num}</h4>
+        <h4>地区：{$employ.e_area}</h4>
+        <h4>创建时间：{$employ.e_subtime}</h4>
+        <h4>修改时间：{$employ.e_modifiedon}</h4>
+        <h4>描述：{$employ.e_descride}</h4>
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script"></block>

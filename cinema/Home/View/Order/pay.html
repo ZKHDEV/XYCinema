@@ -1,0 +1,87 @@
+<extend name="./base"/>
+<block name="content">
+    <title>确认订单 - 想映电影院</title>
+
+    <div>
+        <div class="container">
+            <img src="{$Think.const.IMG_URL}/nav3.png" class="img-responsive" alt="" id="ordernav"/>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <table id="ordertable" class="table table-striped text-center">
+                        <thead>
+                        <tr>
+                            <th>影片</th>
+                            <th>影院</th>
+                            <th>日期</th>
+                            <th>时间</th>
+                            <th>语言/制式</th>
+                            <th>影厅</th>
+                            <th>座位</th>
+                            <th>可获积分</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{$order.movie}</td>
+                            <td>{$order.cinema}</td>
+                            <td>{$order.date}</td>
+                            <td>{$order.time}</td>
+                            <td>{$order.language}/{$order.standard}</td>
+                            <td>{$order.cinema}</td>
+                            <td>{$order.o_seatlist}</td>
+                            <td>{$order.points}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <h3>确认订单</h3><hr/>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="well">
+                        <p>会员{$Think.session.u_name}您好：</p><br/>
+                        <p>&nbsp;&nbsp;您当前绑定的手机号是：</p>
+                        <h4 class="text-warning">&nbsp;&nbsp;&nbsp;&nbsp;{$Think.session.u_phone}</h4>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <br/><p>票数：{$order.ticketnum} 张</p>
+                    <p>购票单价：¥{$order.price}</p><br/>
+                    <form action="__SELF__" method="post">
+                        <h4>可享受优惠：</h4><br/>
+                        <div>
+                            <label class="checkbox-inline">
+                                <input type="radio" name="privilege" value="0" checked>&nbsp;无优惠
+                            </label>
+                        </div>
+                        <hr/>
+                        <h4>可选支付方式：</h4><br/>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="paystyle" value="1" checked>&nbsp;支付宝支付
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="paystyle" value="2">&nbsp;微信支付
+                                </label>
+                            </div>
+                            <div class="col-md-3">
+                                <p>支付金额：¥{$order.o_price}</p>
+                            </div>
+                        </div>
+                        <hr/><br/>
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-9">
+                                <h4>总价：¥{$order.o_price}</h4><br/>
+                                <button type="submit" class="btn btn-warning btn-lg">确认付款</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script src="{$Think.const.JS_URL}/selectseat.js"></script>
+</block>

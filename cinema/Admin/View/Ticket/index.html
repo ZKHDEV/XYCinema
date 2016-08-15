@@ -1,0 +1,171 @@
+<extend name="./base"/>
+<block name="content">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/select2_metro.css" />
+
+    <link rel="stylesheet" href="{$Think.const.ADMIN_CSS_URL}/DT_bootstrap.css" />
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            影票管理
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>影票管理</li>
+
+        </ul>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+        <div class="clearfix">
+
+            <div class="btn-group">
+
+                <a class="btn green" href="__CONTROLLER__/add">
+
+                    添加 <i class="icon-plus"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <br/>
+
+        <div>
+
+            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+                <thead>
+
+                <tr>
+
+                    <th>电影名</th>
+
+                    <th>影院</th>
+
+                    <th>影厅</th>
+
+                    <th>制式</th>
+
+                    <th>语言</th>
+
+                    <th>开场时间</th>
+
+                    <th>单价</th>
+
+                    <th>总票数</th>
+
+                    <th>剩余票数</th>
+
+                    <th>积分</th>
+
+                    <th>在售</th>
+
+                    <th>详情</th>
+
+                    <th>修改</th>
+
+                    <th>删除</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <foreach name="info" item="ticket">
+
+                    <tr>
+
+                        <td>{$ticket.movie}</td>
+
+                        <td>{$ticket.cinema}</td>
+
+                        <td>{$ticket.room}</td>
+
+                        <td>{$ticket.t_standard}</td>
+
+                        <td>{$ticket.t_language}</td>
+
+                        <td>{$ticket.t_date}&nbsp;{$ticket.t_time}</td>
+
+                        <td>{$ticket.t_price}</td>
+
+                        <td>{$ticket.t_ticketnum}</td>
+
+                        <td>{$ticket.remain}</td>
+
+                        <td>{$ticket.t_points}</td>
+
+                        <td>
+                            <if condition="$ticket.t_issale eq 1">是
+                                <else/>否
+                            </if>
+                        </td>
+
+                        <td><a href="__CONTROLLER__/detail/t_id/{$ticket.t_id}">详情</a></td>
+
+                        <td><a href="__CONTROLLER__/update/t_id/{$ticket.t_id}">修改</a></td>
+
+                        <td><a href="__CONTROLLER__/delete/t_id/{$ticket.t_id}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+
+                    </tr>
+
+                </foreach>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script">
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/select2.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/DT_bootstrap.js"></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}/table-editable.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+
+        jQuery(document).ready(function() {
+
+            TableEditable.init();
+
+        });
+
+    </script>
+
+    <!-- END JAVASCRIPTS -->
+
+</block>

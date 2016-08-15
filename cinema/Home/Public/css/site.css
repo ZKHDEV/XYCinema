@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    overflow-x: hidden;
+}
+
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}
+
+.fixed-bottom {position: fixed;bottom: 0;width:100%;}
+
+footer{
+    margin-top: 50px;
+    background-color: #dddddd;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+footer ul{
+    display: inline;
+}
+footer ul li{
+    margin-left: 60px;
+}
+
+.verifyimg{
+    width: 100px;
+    height: 40px;
+}
+
+.navbarlink{
+    color: #dddddd;;
+}
+
+#logo{
+    height: 40px;
+    margin-top: -10px;
+}
+
+label.error {
+    color: red;
+    display: inline;
+}
+.field-validation-error{
+    color:red;
+}
+
+#topnav{
+    border: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+/*    Main Page CSS    */
+
+#advertising{
+    margin-top: -20px;
+}
+
+#menulist{
+    margin-top: 30px;
+    margin-bottom: 25px;
+    background-color: #f6f6f6;
+}
+#menulist a{
+    color: #D9534F;
+}
+#menulist > li.active > a,
+#menulist > li.active > a:hover,
+#menulist > li.active > a:focus {
+    color: #ffffff;
+    background-color: #D9534F;
+}
+
+#buymodal{
+    margin-left: 150px;
+    width: auto;
+}
+#buymodaldialog{
+    width: auto;
+    display: inline-block;
+}
+#buycontent{
+    width: 1000px;
+    min-height: 300px;
+}
+.selecthead{
+    margin-top: -26px;
+}
+.selecthead .headbtn{
+    border: 0;
+    background-color: #F6ECEA;
+}
+.selecthead .citylist{
+    margin-left: 150px;
+    margin-top: -24px;
+    width: auto;
+}
+#datetimepicker{
+    width: 150px;
+    margin-right: 90px;
+}
+.seatbtn{
+    width: 100%;
+}
+
+.stanspan{
+    position: relative;
+    left: 50px;
+}
+.pricespan{
+    position: absolute;
+    right: 20px;
+}
+
+.posterimg{
+    width: 100%;
+}
+.movieimg{
+    width: 100%;
+}
+
+/*    Movie Page CSS    */
+
+#moviediv{
+    margin-top: 10px;
+}
+#moviediv a{
+    width: 150px;
+}
+
+#moviepic{
+    margin-bottom: 20px;
+}
+
+#stagelist{
+    width: 100%;
+ }
+#stagelist li{
+    margin-bottom: 20px;
+}
+
+.commentdiv a,.commentdiv button{
+    width: 100%;
+    margin-top: 10px;
+}
+.commentdiv div{
+    padding: 20px;
+}
+.commentdiv p{
+    overflow-wrap: break-word;
+    font-size: 11pt;
+}
+
+#comtext{
+    width: 100%;
+}
+
+.fromp{
+    font-size: 13pt;
+}
+
+/*    Order Page CSS    */
+#ordernav{
+    margin-left: -160px;
+}
+
+#ordertable{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#ordertable thead{
+    color: #ffffff;
+    background-color: #3c3c3c;
+}
+#ordertable thead tr th{
+    text-align: center;
+}
+
+.stanspan2{
+    position: relative;
+    left: 100px;
+}
+.datetimespan2{
+    position: relative;
+    left: 200px;
+}
+.pricespan2{
+    position: absolute;
+    right: 20px;
+}
+
+/*    USER Page CSS    */
+#vipheader{
+    color: #28A68D;
+    font-weight: bold;
+}
+.grehr{
+    height: 6px;
+    background-color: #6AD49A;
+    margin-top: -20px;
+}
+.orghr{
+    height: 1px;
+    background-color: #F5B987;
+}
+#vipdiv{
+    background-color: #eeeeee;
+    padding: 10px
+}
+.orderitem > div:nth-child(3) div{
+    margin-top: 62px
+}
+.orderitem > div:first-child {
+    color: #F5B987;
+}
+
+.ticket{
+    width: 400px;
+    height: 160px;
+    background-image: url('../img/ticket.png');
+    background-repeat: no-repeat
+}
+.ticket img{
+    position: absolute;
+    top: 46px;
+    left: 168px
+}
+.ticket > div{
+    position: absolute;
+}
+.ticket > div:nth-child(1){
+    display: inline;
+    left: 50px;
+    top: 15px
+}
+.ticket > div:nth-child(2){
+    padding-left: 70px;
+    display: inline;
+    left: 153px;
+    top: 15px
+}
+.ticket > div:nth-child(3){
+    padding-top: 6px;
+    width: 237px;
+    height: 77px;
+    text-align: center;
+    line-height: 77px;
+    left: 48px;
+    top: 41px
+}
+.ticket > div:nth-child(4){
+    display: inline;
+    left: 195px;
+    top: 125px
+}
+
+.mycommentdiv{
+    padding: 20px;
+}
+.mycommentdiv p{
+    overflow-wrap: break-word;
+    font-size: 11pt;
+}
+.comspan{
+    font-size: 12pt;
+    font-weight: 600;
+}
+
+#hismovlist{
+    width: 100%;
+}
+#hismovlist li{
+    margin-bottom: 20px;
+    width: 280px;
+}
+
+/*    SEAT Page CSS    */
+.seatlist{
+    /*margin-left: 170px;*/
+    margin-bottom: 3px;
+}
+.seatlist li{
+    margin-right: -10px;
+}
+
+.bghr{
+    height: 15px;
+    background-color: #9F9F9F;
+    margin-bottom: 20px;
+}
+
+#zjlist img{
+    height: 30px
+}
+
+#confirmseatdiv{
+    background-color: #D7D7D7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.seatdiv{
+    margin-left: 30px;
+}
+.seatlist{
+    list-style-type: none;
+    float: left;
+    margin: auto;
+}
+.seatlist li{
+    float: left;
+    margin-right: 2px;
+    margin-top: 5px;
+}
+
+.seatclear{
+    clear: both;
+}
+.eseatdiv{
+    width: 52px;
+    height: 52px;
+}
+/*      JOIN Page CSS       */
+.redhr{
+    height: 10px;
+    background-color: red;
+}
+#jointable th{
+     text-align: center;
+     padding-top: 15px;
+     padding-bottom: 15px;
+     background-color: #DDDDDD;
+ }
+#jointable td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#joincitylist{
+    margin-bottom: 150px;
+}
+
+/*      CONTECT AND NOTICE Page CSS        */
+#contentwell{
+    margin-top: 60px;
+}
+
+/*      LOGIN Page CSS      */
+#loginimg{
+    margin-left: -15px;
+}
+#loginlogo{
+    height: 60px;
+    margin: 30px 0 20px -30px;
+}
+#loginhead{
+    font-weight:300;
+}
+#loginfooter{
+    padding-top: 30px;
+}

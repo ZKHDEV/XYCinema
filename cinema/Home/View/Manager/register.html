@@ -1,0 +1,122 @@
+<extend name="./base"/>
+<block name="content">
+<title>会员注册 - 想映电影院</title>
+
+<div class="container">
+    <p><h1 style="font-weight:300">会员注册</h1></p><br />
+    <p>如果你已经拥有账户，请<a href="__CONTROLLER__/login">登录</a>。</p><br />
+    <div class="col-md-5">
+        <form id="registerform" class="form-horizontal" action="" method="post" autocomplete="off" onsubmit="return checkregister();">
+            <div class="form-group">
+                <label for="phone">手机号</label>
+                <input type="text" id="phone" class="form-control" autofocus name="u_phone" maxlength="11">
+                <p id="phoneres" class="error"></p>
+                <notempty name="error.u_phone"><p class="error">{$error.u_phone}</p></notempty>
+            </div>
+            <div class="form-group">
+                <div class="col-md-9" style="margin-left: -15px">
+                <label for="mobile_code">手机验证码</label>
+                <input type="text" id="mobile_code" class="form-control" name="mobile_code">
+                </div>
+                <div class="col-md-3">
+                    <input type="button" id="zphone" class="btn btn-info" onclick="get_mobile_code();" style="margin-top: 25px" value="获取验证码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-9" style="margin-left: -15px">
+                    <label for="verify">图形验证码</label>
+                    <input type="text" id="verify" class="form-control" name="verify" maxlength="4">
+                </div>
+                <div class="col-md-3">
+                    <a href="#"><img class="verifyimg" style="margin-top: 20px" src="__CONTROLLER__/verifyImg"
+                    onclick="this.src='__CONTROLLER__/verifyImg/' + Math.random()"/></a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="u_pwd">密码</label>
+                <input type="password" id="u_pwd2" class="form-control" name="u_pwd2" maxlength="30">
+                <input type="hidden" id="u_pwd" name="u_pwd">
+                <notempty name="error.u_pwd"><p class="error">{$error.u_pwd}</p></notempty>
+            </div>
+            <div class="form-group">
+                <label for="r_pwd">再次输入密码</label>
+                <input type="password" id="r_pwd2" class="form-control" name="r_pwd2" maxlength="30">
+                <input type="hidden" id="r_pwd" name="r_pwd">
+            </div>
+            <div class="form-group">
+                <label for="name">真实姓名</label>
+                <input type="text" id="name" class="form-control" name="u_name" maxlength="20">
+                <notempty name="error.u_name"><p class="error">{$error.u_name}</p></notempty>
+            </div>
+            <div class="form-group">
+                <label for="email">电子邮箱</label>
+                <input type="text" id="email" class="form-control" name="u_email" value="admin@admin.com">
+                <p id="emailres" class="error"></p>
+                <notempty name="error.u_email"><p class="error">{$error.u_email}</p></notempty>
+            </div><br/>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+</block>
+<block name="script">
+<script src="{$Think.const.JS_URL}/jquery.validate.min.js"></script>
+<script src="{$Think.const.JS_URL}/validate.js"></script>
+<script src="{$Think.const.JS_URL}/jquery.md5.js"></script>
+<script>
+    $('#phone').keyup(function () {
+        $.post('checkPhone',{'phone':$(this).val()},function (result) {
+            $('#phoneres').html(result);
+        })
+    });
+    $('#email').keyup(function () {
+        $.post('checkEmail',{'email':$(this).val()},function (result) {
+            $('#emailres').html(result);
+        })
+    });
+    function checkregister() {
+        $("#u_pwd").val($.md5($('#u_pwd2').val()));
+        $("#r_pwd").val($.md5($('#r_pwd2').val()));
+    }
+
+    function get_mobile_code(){
+        $.post('/cinema/Home/Manager/sms', {mobile:jQuery.trim($('#phone').val()),send_code:"{$Think.session.send_code}"}, function(msg) {
+            if(msg=='提交成功'){
+                RemainTime();
+            }
+        });
+    };
+    var iTime = 59;
+    var Account;
+    function RemainTime(){
+        document.getElementById('zphone').disabled = true;
+        var iSecond,sSecond="",sTime="";
+        if (iTime >= 0){
+            iSecond = parseInt(iTime%60);
+            iMinute = parseInt(iTime/60)
+            if (iSecond >= 0){
+                if(iMinute>0){
+                    sSecond = iMinute + "分" + iSecond + "秒后可重新发送";
+                }else{
+                    sSecond = iSecond + "秒后可重新发送";
+                }
+            }
+            sTime=sSecond;
+            if(iTime==0){
+                clearTimeout(Account);
+                sTime='获取验证码';
+                iTime = 59;
+                document.getElementById('zphone').disabled = false;
+            }else{
+                Account = setTimeout("RemainTime()",1000);
+                iTime=iTime-1;
+            }
+        }else{
+            sTime='没有倒计时';
+        }
+        document.getElementById('zphone').value = sTime;
+    }
+</script>
+</block>

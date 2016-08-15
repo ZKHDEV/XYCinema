@@ -1,0 +1,155 @@
+<extend name="./base"/>
+<block name="content">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/select2_metro.css" />
+
+    <link rel="stylesheet" href="{$Think.const.ADMIN_CSS_URL}/DT_bootstrap.css" />
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            电影管理
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>电影管理</li>
+
+        </ul>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+        <div class="clearfix">
+
+            <div class="btn-group">
+
+                <a class="btn green" href="__CONTROLLER__/add">
+
+                    添加 <i class="icon-plus"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <br/>
+
+        <div>
+
+            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+                <thead>
+
+                <tr>
+
+                    <th>电影名</th>
+
+                    <th>类型</th>
+
+                    <th>国家</th>
+
+                    <th>语言</th>
+
+                    <th>片长</th>
+
+                    <th>热映</th>
+
+                    <th>剧照</th>
+
+                    <th>详情</th>
+
+                    <th>修改</th>
+
+                    <th>删除</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <foreach name="info" item="movie">
+
+                    <tr>
+
+                        <td>{$movie.m_name}</td>
+
+                        <td>{$movie.m_type}</td>
+
+                        <td>{$movie.m_country}</td>
+
+                        <td>{$movie.m_language}</td>
+
+                        <td>{$movie.m_length}</td>
+
+                        <td>
+                            <if condition="$movie.m_ishot eq 1">是
+                                <else/>否
+                            </if>
+                        </td>
+
+                        <td><a href="__CONTROLLER__/stage/m_id/{$movie.m_id}">剧照</a></td>
+
+                        <td><a href="__CONTROLLER__/detail/m_id/{$movie.m_id}">详情</a></td>
+
+                        <td><a href="__CONTROLLER__/update/m_id/{$movie.m_id}">修改</a></td>
+
+                        <td><a href="__CONTROLLER__/delete/m_id/{$movie.m_id}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+
+                    </tr>
+
+                </foreach>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script">
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/select2.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/DT_bootstrap.js"></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}/table-editable.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+
+        jQuery(document).ready(function() {
+
+            TableEditable.init();
+
+        });
+
+    </script>
+
+    <!-- END JAVASCRIPTS -->
+
+</block>

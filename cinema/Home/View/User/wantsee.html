@@ -1,0 +1,100 @@
+<extend name="./base"/>
+<block name="content">
+    <title>我想看的影片 - 想映电影院</title>
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <h2 id="vipheader">会员中心</h2>
+                </div>
+                <div id="vipdiv" class="col-md-8">
+                    <div class="col-md-4">
+                        <p>用户名：{$Think.session.u_name}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>绑定手机号：{$Think.session.u_phone}</p>
+                        <p>会员消费积分：{$user.u_points}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>会员级别：
+                            <if condition="$user.u_points lt 100">
+                                铜牌会员
+                                <elseif condition="$user.u_points lt 200"/>银牌会员
+                                <else/>金级会员
+                            </if>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <hr class="grehr"/>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">我的订单</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="__CONTROLLER__/index" class="list-group-item">我的订单</a>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">个人信息</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="__CONTROLLER__/permsg" class="list-group-item">查看资料</a>
+                            <a href="__CONTROLLER__/changemsg" class="list-group-item">修改资料</a>
+                            <a href="__CONTROLLER__/changepwd" class="list-group-item">修改密码</a>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">我的影片</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="__CONTROLLER__/comment" class="list-group-item">我的影评</a>
+                            <a href="__CONTROLLER__/history" class="list-group-item">我看过的影片</a>
+                            <p class="list-group-item active">我想看的影片</p>
+                        </div>
+                    </div>
+                    <br/>
+                    <a class="btn btn-warning btn-group-justified" href="__MODULE__/Manager/logout">退出登录</a>
+                </div>
+                <div class="col-md-9">
+                    <h3>想看的影片</h3>
+                    <hr class="orghr"/>
+                    <notempty name="movies">
+                        <ul class="list-inline" id="hismovlist">
+                            <foreach name="movies" item="movie">
+                                <li>
+                                    <div class="thumbnail text-center">
+                                        <h4>{$movie.m_name}</h4>
+                                        <a href="__MODULE__/Movie/detail/m_id/{$movie.m_id}"><img src="{$Think.const.UPLOAD_URL}/{$movie.m_frontcover}" alt=""></a>
+                                        <div class="caption">
+                                            <div class="col-md-8">
+                                                <a class="btn btn-default btn-danger seatbtn" href="__MODULE__/Order/ticket/m_id/{$movie.m_id}">选座购票</a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="btn btn-link" href="__MODULE__/Movie/delwant/m_id/{$movie.m_id}">删除</a>
+                                            </div>
+                                            <div style="clear: both"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </foreach>
+                        </ul>
+                        <else/>
+                        <h1>你还未添加任何影片！</h1>
+                    </notempty>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script src="{$Think.const.JS_URL}/jquery.validate.min.js"></script>
+    <script src="{$Think.const.JS_URL}/validate.js"></script>
+</block>

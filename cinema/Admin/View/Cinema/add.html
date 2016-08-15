@@ -1,0 +1,170 @@
+<extend name="./base"/>
+<block name="content">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/select2_metro.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/clockface.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-toggle-buttons.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/multi-select-metro.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-modal.css"/>
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            添加影院
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>
+
+                <a href="__CONTROLLER__/index">影院管理</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>添加影院</li>
+
+        </ul>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+        <div class="portlet box blue">
+
+            <div class="portlet-title">
+
+                <div class="caption"><i class="icon-reorder"></i>添加</div>
+
+            </div>
+
+            <div class="portlet-body form">
+
+                <!-- BEGIN FORM-->
+
+                <form id="cinemaaddform" action="__CONTROLLER__/add" method="post" class="form-horizontal">
+
+                    <div class="control-group">
+
+                        <label class="control-label">影院名*</label>
+
+                        <div class="controls">
+
+                            <input type="text" class="m-wrap" name="c_name" maxlength="50"/>
+
+                            <notempty name="error.c_name"><span class="help-inline">{$error.c_name}</span></notempty>
+
+                        </div>
+
+                    </div>
+
+                    <div class="control-group">
+
+                        <label class="control-label">城市*</label>
+
+                        <div class="controls">
+
+                            <input type="text" class="m-wrap" name="c_location" maxlength="50"/>
+
+                            <notempty name="error.c_location"><span class="help-inline">{$error.c_location}</span></notempty>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn blue">提交</button>
+
+                        <a href="__CONTROLLER__/index" type="button" class="btn">取消</a>
+
+                    </div>
+
+                </form>
+
+                <!-- END FORM-->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script">
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/ckeditor.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-fileupload.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/chosen.jquery.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/select2.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/wysihtml5-0.3.0.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-wysihtml5.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.tagsinput.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.toggle.buttons.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-datetimepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/clockface.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/date.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-colorpicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-timepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.inputmask.bundle.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.input-ip-address-control-1.0.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.multi-select.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/bootstrap-modal.js" type="text/javascript" ></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/bootstrap-modalmanager.js" type="text/javascript" ></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}/app.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/form-components.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/jquery.validate.min.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/validate.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+</block>

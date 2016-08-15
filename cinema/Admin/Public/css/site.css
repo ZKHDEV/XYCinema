@@ -1,0 +1,17 @@
+.seatdiv{
+    margin: 60px;
+    margin-left: 150px;
+}
+.seatlist{
+    list-style-type: none;
+    float: left;
+    margin: auto;
+}
+.seatlist li{
+    float: left;
+    margin-right: 2px;
+
+}
+.seatclear{
+    clear: both;
+}

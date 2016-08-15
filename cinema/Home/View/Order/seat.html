@@ -1,0 +1,109 @@
+<extend name="./base"/>
+<block name="content">
+    <title>选座订票 - 想映电影院</title>
+
+    <div>
+        <div class="container">
+            <img src="{$Think.const.IMG_URL}/nav2.png" class="img-responsive" alt="" id="ordernav"/>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <table id="ordertable" class="table table-striped text-center">
+                        <thead>
+                        <tr>
+                            <th>影片</th>
+                            <th>影院</th>
+                            <th>日期</th>
+                            <th>时间</th>
+                            <th>语言/制式</th>
+                            <th>影厅</th>
+                            <th>积分</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{$ticket.movie}</td>
+                            <td>{$ticket.cinema}</td>
+                            <td>{$ticket.t_date}</td>
+                            <td>{$ticket.t_time}</td>
+                            <td>{$ticket.t_language}/{$ticket.t_standard}</td>
+                            <td>{$ticket.room}</td>
+                            <td>{$ticket.t_points}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="text-center">
+                        <img src="{$Think.const.IMG_URL}/screen.png" alt=""/><br/><br/>
+
+                        <div class="seatdiv">
+                            <for start="1" end="12" step="1" name="row">
+                                <ul class="seatlist">
+                                    <for start="1" end="15" step="1" name="col">
+                                        <php>
+                                            $n = $row*14-14+$col;
+                                            $url = ADMIN_IMG_URL;
+                                            $colnum=$col-$mincol+1;
+                                            $rownum=$row-$minrow+1;
+                                            if(in_array($row*14-14+$col,$room['seats']))
+                                                if(in_array($row*14-14+$col,$room['disseatarr']))
+                                                    echo "<li><img src='$url/fseat.png'/></li>";
+                                                else
+                                                    echo "<li><a href='javascript:void(0)' class='seatlink' col='$colnum' row='$rownum' num='$n' sel='0'><img src='$url/eseat.png'/></a></li>";
+                                            else
+                                                echo "<li><div class='eseatdiv'>&nbsp;</div></a></li>";
+                                        </php>
+                                    </for>
+                                </ul>
+                                <div class="seatclear"></div>
+                            </for>
+                        </div>
+
+                        <hr class="bghr"/>
+                        <ul class="list-group list-inline" id="zjlist">
+                            <li><img src="{$Think.const.IMG_URL}/eseat.png" alt=""/>可选座位</li>
+                            <li><img src="{$Think.const.IMG_URL}/sseat.png" alt=""/>已选座位</li>
+                            <li><a sel="2"><img src="{$Think.const.IMG_URL}/fseat.png" alt=""/></a>不可选座位</li>
+                        </ul>
+                        <p>本影厅共有座位{$room.totalcount}个，当前已售{$room.discount}个</p><br/>
+                    </div>
+                    <p class="error">特别提示：</p>
+                    <p>下单前请仔细核对影片、影院、场次、手机号等信息。</p>
+                    <p>下单后请在15分钟内完成支付，超时系统将不保留座位。</p>
+                    <p>每笔订单最多可以选择6个座位，请选择连续的座位。</p>
+                </div>
+                <div class="col-md-3" id="confirmseatdiv">
+                    <img class="img-responsive" src="{$Think.const.UPLOAD_URL}/{$movie.m_frontcover}" alt=""/><br/><br/>
+                    <form action="__CONTROLLER__/submitorder" method="post" class="form-horizontal" onsubmit="return checkform()">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="seatlist">座位:</label>
+                            <div class="col-md-9">
+                                <textarea type="text" id="seatlist" name="o_seatlist" rows="3" class="form-control" readonly></textarea>
+                                <input type="hidden" id="seats" name="o_seats"/>
+                                <input type="hidden" name="o_ticketid" value="{$ticket.t_id}"/>
+                                <input type="hidden" name="price" value="{$ticket.t_price}"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">已选择</label>
+                            <div class="col-md-2">
+                                <p id="seatnump" class="form-control-static">0</p>
+                            </div>
+                            <label class="col-md-7 control-label">个座位,再次点击取消</label>
+                        </div>
+                        <br/>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-danger btn-lg" onclick="return checkseat()">选座确认</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script src="{$Think.const.JS_URL}/selectseat.js"></script>
+</block>

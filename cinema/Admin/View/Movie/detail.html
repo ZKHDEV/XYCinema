@@ -1,0 +1,73 @@
+<extend name="./base"/>
+<block name="content">
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            电影详情
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>
+
+                <a href="__CONTROLLER__/index">电影管理</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>电影详情</li>
+
+        </ul>
+
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+    </div>
+
+    <div style="margin: 50px">
+        <h3>{$movie.m_name}</h3><hr/>
+        <h4>导演：{$movie.m_director}</h4>
+        <h4>主演：{$movie.m_star}</h4>
+        <h4>类型：{$movie.m_type}</h4>
+        <h4>国家/地区：{$movie.m_country}</h4>
+        <h4>语言：{$movie.m_language}</h4>
+        <h4>版本：{$movie.m_version}</h4>
+        <h4>上映日期：{$movie.m_showdate}</h4>
+        <h4>片长：{$movie.m_length}</h4>
+        <h4>是否热映：
+        <if condition="$movie.ishot eq '1'">是<else/>否</if>
+        </h4>
+        <h4>备注：{$movie.m_remark}</h4>
+        <br/>
+        <h3>影片剧情</h3><hr/>
+        <p>{$movie.m_descride}</p>
+        <br/>
+        <h3>封面</h3><hr/>
+        <a target="_blank" href="{$Think.const.UPLOAD_URL}/{$movie.m_frontcover}"><img src="{$Think.const.UPLOAD_URL}/{$movie.m_frontcover}" alt=""/></a>
+        <br/>
+        <h3>横幅海报</h3><hr/>
+        <a target="_blank" href="{$Think.const.UPLOAD_URL}/{$movie.m_poster}"><img src="{$Think.const.UPLOAD_URL}/{$movie.sm_poster}" alt=""/></a>
+        <br/>
+        <notempty name="movie.m_advance">
+            <h3>预告片</h3><hr/>
+            <embed src="{$movie.m_advance}" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+            <br/>
+        </notempty>
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script"></block>

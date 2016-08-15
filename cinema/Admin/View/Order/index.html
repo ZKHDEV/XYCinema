@@ -1,0 +1,143 @@
+<extend name="./base"/>
+<block name="content">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/select2_metro.css" />
+
+    <link rel="stylesheet" href="{$Think.const.ADMIN_CSS_URL}/DT_bootstrap.css" />
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            订单管理
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>订单管理</li>
+
+        </ul>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+
+
+        <div>
+
+            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+                <thead>
+
+                <tr>
+
+                    <th>订单号</th>
+
+                    <th>用户</th>
+
+                    <th>座位</th>
+
+                    <th>状态</th>
+
+                    <th>票数</th>
+
+                    <th>总价</th>
+
+                    <th>付款时间</th>
+
+                    <th>创建时间</th>
+
+                    <th>电影票</th>
+
+                    <th>删除</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <foreach name="info" item="order">
+
+                    <tr>
+
+                        <td>{$order.o_id}</td>
+
+                        <td>{$order.user}</td>
+
+                        <td>{$order.o_seats}</td>
+
+                        <td>
+                            <if condition="$order.o_state eq 0">未付款
+                            <elseif condition="$order.o_state eq 1"/>已付款
+                            <elseif condition="$order.o_state eq 2"/>已取消
+                            <else/>超时
+                            </if>
+                        </td>
+
+                        <td>{$order.ticketnum}</td>
+
+                        <td>{$order.price}</td>
+
+                        <td>{$order.o_paytime}</td>
+
+                        <td>{$order.o_subtime}</td>
+
+                        <td><a href="__MODULE__/Ticket/detail/t_id/{$order.o_ticketid}">电影票</a></td>
+
+                        <td><a href="__CONTROLLER__/delete/o_id/{$order.o_id}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+
+                    </tr>
+
+                </foreach>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script">
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/select2.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/DT_bootstrap.js"></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}/table-editable.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+
+        jQuery(document).ready(function() {
+
+            TableEditable.init();
+
+        });
+
+    </script>
+
+    <!-- END JAVASCRIPTS -->
+
+</block>

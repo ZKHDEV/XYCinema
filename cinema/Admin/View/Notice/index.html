@@ -1,0 +1,156 @@
+<extend name="./base"/>
+<block name="content">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/select2_metro.css" />
+
+    <link rel="stylesheet" href="{$Think.const.ADMIN_CSS_URL}/DT_bootstrap.css" />
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            公告管理
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>公告管理</li>
+
+        </ul>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+        <div class="clearfix">
+
+            <div class="btn-group">
+
+                <a class="btn green" href="__CONTROLLER__/add">
+
+                    添加 <i class="icon-plus"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <br/>
+
+        <div>
+
+            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+                <thead>
+
+                <tr>
+
+                    <th>公告ID</th>
+
+                    <th>创建时间</th>
+
+                    <th>修改时间</th>
+
+                    <th>是否发布</th>
+
+                    <th>详情</th>
+
+                    <th>修改</th>
+
+                    <th>删除</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <foreach name="info" item="notice">
+
+                    <tr>
+
+                        <td>{$notice.n_id}</td>
+
+                        <td>{$notice.n_subtime}</td>
+
+                        <td>{$notice.n_modifiedon}</td>
+
+                        <td>
+                            <if condition="$notice.n_isshow eq '1'">
+                                <label><input name="show" type="radio" checked value="{$notice.n_id}"/>&nbsp;发布</label>
+                                <else/>
+                                <label><input name="show" type="radio" value="{$notice.n_id}"/>&nbsp;发布</label>
+                            </if>
+                        </td>
+
+                        <td><a href="__CONTROLLER__/detail/n_id/{$notice.n_id}">详情</a></td>
+
+                        <td><a href="__CONTROLLER__/update/n_id/{$notice.n_id}">修改</a></td>
+
+                        <td><a href="__CONTROLLER__/delete/n_id/{$notice.n_id}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+
+                    </tr>
+
+                </foreach>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script">
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/select2.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/DT_bootstrap.js"></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}/table-editable.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+
+        jQuery(document).ready(function() {
+
+            TableEditable.init();
+
+            $(":radio").click(function () {
+                var val = $(this).val();
+                $.post("/cinema/Admin/Notice/setshow",{ "n_id":val },function (result) {
+                    if(result === "ok") {
+                        $(this).attr("checked",true);
+                    }
+                    else{
+                        window.location.reload();
+                    }
+                });
+            });
+        });
+
+    </script>
+
+    <!-- END JAVASCRIPTS -->
+
+</block>

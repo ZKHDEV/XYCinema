@@ -1,0 +1,139 @@
+<extend name="./base"/>
+<block name="content">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/select2_metro.css" />
+
+    <link rel="stylesheet" href="{$Think.const.ADMIN_CSS_URL}/DT_bootstrap.css" />
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            影厅管理
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>
+
+                <a href="__MODULE__/Cinema/index">影院管理</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>影厅管理</li>
+
+        </ul>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+        <div class="clearfix">
+
+            <div class="btn-group">
+
+                <a class="btn green" href="__CONTROLLER__/addroom/c_id/{$c_id}">
+
+                    添加 <i class="icon-plus"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <br/>
+
+        <div>
+
+            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+
+                <thead>
+
+                <tr>
+
+                    <th>影厅名</th>
+
+                    <th>座位数</th>
+
+                    <th>查看</th>
+
+                    <th>修改</th>
+
+                    <th>删除</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <foreach name="info" item="room">
+
+                    <tr>
+
+                        <td>{$room.r_name}</td>
+
+                        <td>{$room.r_count}</td>
+
+                        <td><a href="__CONTROLLER__/showroom/c_id/{$c_id}/r_id/{$room.r_id}">查看</a></td>
+
+                        <td><a href="__CONTROLLER__/ediroom/c_id/{$c_id}/r_id/{$room.r_id}">修改</a></td>
+
+                        <td><a href="__CONTROLLER__/delroom/r_id/{$room.r_id}" onclick="return confirm('确定要删除吗？');">删除</a></td>
+
+                    </tr>
+
+                </foreach>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script">
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/select2.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/DT_bootstrap.js"></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}/table-editable.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+
+        jQuery(document).ready(function() {
+
+            TableEditable.init();
+
+        });
+
+    </script>
+
+    <!-- END JAVASCRIPTS -->
+
+</block>

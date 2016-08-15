@@ -1,0 +1,43 @@
+<extend name="./base"/>
+<block name="content">
+    <title>选择场次 - 想映电影院</title>
+
+    <div>
+        <div class="container">
+            <img src="{$Think.const.IMG_URL}/nav1.png" class="img-responsive" alt="" id="ordernav"/>
+            <br/>
+            <div class="text-center" style="width: 100%"><h1>{$mname}</h1></div>
+            <br/>
+            <notempty name="citys">
+                <div id="ticketcontent">
+                    <div class="col-md-3 col-md-offset-1">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;选择城市</h3>
+                            </div>
+                            <ul class="list-group" id="cityul">
+                                <foreach name="citys" item="ci">
+                                    <a class="list-group-item" href="javascript:void(0)" onclick="getticketbymovie(this)" mid="{$mid}">{$ci}</a>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span class="glyphicon glyphicon-tags"/>&nbsp;选择电影票</h3>
+                            </div>
+                            <ul class="list-group" id="ticketul"></ul>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <else/>
+                <div class="text-center" style="width: 100%"><h2>最近没有该电影票销售</h2></div>
+            </notempty>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script src="{$Think.const.JS_URL}/selectticket.js"></script>
+</block>

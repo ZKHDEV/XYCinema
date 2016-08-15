@@ -1,0 +1,198 @@
+<extend name="./base"/>
+<block name="content">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-fileupload.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/chosen.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/select2_metro.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/jquery.tagsinput.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/clockface.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-wysihtml5.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/timepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-toggle-buttons.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/datetimepicker.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/multi-select-metro.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}/bootstrap-modal.css"/>
+
+    <div style="background-color:#ffffff;padding-left: 30px;padding-right: 30px">
+        <h3 class="page-title">
+
+            添加影厅
+
+        </h3>
+
+        <ul class="breadcrumb">
+
+            <li>
+
+                <i class="icon-home"></i>
+
+                <a href="__MODULE__/Admin/index" target="_top">主页</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>
+
+                <a href="__CONTROLLER__/index">影院管理</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>
+
+                <a href="__CONTROLLER__/room/c_id/{$c_id}">影厅管理</a>
+
+                <i class="icon-angle-right"></i>
+
+            </li>
+
+            <li>添加影厅</li>
+
+        </ul>
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+        <div class="portlet box blue">
+
+            <div class="portlet-title">
+
+                <div class="caption"><i class="icon-reorder"></i>添加</div>
+
+            </div>
+
+            <div class="portlet-body form">
+
+                <!-- BEGIN FORM-->
+
+                <form id="roomform" action="__SELF__" method="post" class="form-horizontal">
+
+                    <input type="hidden" name="r_cinemaid" value="{$c_id}">
+
+                    <br/>
+
+                    <div class="control-group">
+
+                        <label class="control-label">影厅名*</label>
+
+                        <div class="controls">
+
+                            <input type="text" class="m-wrap" name="r_name" maxlength="50"/>
+
+                            <notempty name="error.r_name"><span class="help-inline">{$error.r_name}</span></notempty>
+
+                        </div>
+
+                    </div>
+
+                    <div class="control-group">
+
+                        <label class="control-label">已选座位数*</label>
+
+                        <div class="controls">
+
+                            <input id="seatnum" class="span6 m-wrap" type="text" value="0" disabled />
+                            <input type="hidden" id="seats" name="r_seats">
+
+                            <notempty name="error.r_seats"><span class="help-inline">{$error.r_seats}</span></notempty>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="seatdiv">
+                        <for start="1" end="12" step="1" name="row">
+                            <ul class="seatlist">
+                                <for start="1" end="15" step="1" name="col">
+                                    <li><a href="javascript:void(0)" class="seatlink" num="{$row*14-14+$col}" sel="0"><img src="{$Think.const.ADMIN_IMG_URL}/eseat.png" alt=""/></a></li>
+                                </for>
+                                <li><h2>&nbsp;{$row}</h2></li>
+                            </ul>
+                            <div class="seatclear"></div>
+                        </for>
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn blue">提交</button>
+
+                        <a href="__CONTROLLER__/room/c_id/{$c_id}" type="button" class="btn">取消</a>
+
+                    </div>
+
+                </form>
+
+                <!-- END FORM-->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</block>
+<!-- END CONTAINER -->
+
+<block name="script">
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/ckeditor.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-fileupload.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/chosen.jquery.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/select2.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/wysihtml5-0.3.0.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-wysihtml5.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.tagsinput.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.toggle.buttons.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-datetimepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/clockface.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/date.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-colorpicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/bootstrap-timepicker.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.inputmask.bundle.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.input-ip-address-control-1.0.min.js"></script>
+
+    <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}/jquery.multi-select.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/bootstrap-modal.js" type="text/javascript" ></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/bootstrap-modalmanager.js" type="text/javascript" ></script>
+
+    <!-- END PAGE LEVEL PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}/app.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/form-components.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/jquery.validate.min.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/validate.js"></script>
+
+    <script src="{$Think.const.ADMIN_JS_URL}/seats.js"></script>
+
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+</block>

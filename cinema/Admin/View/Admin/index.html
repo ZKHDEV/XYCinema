@@ -1,0 +1,255 @@
+<extend name="./base"/>
+<block name="content">
+<link rel="shortcut icon" href="{$Think.const.PUBLIC_IMG_URL}/logo.ico" />
+<div class="page-header-fixed">
+
+<!-- BEGIN HEADER -->
+
+<div class="header navbar navbar-inverse navbar-fixed-top">
+
+    <!-- BEGIN TOP NAVIGATION BAR -->
+
+    <div class="navbar-inner">
+
+        <div class="container-fluid">
+
+            <!-- BEGIN LOGO -->
+
+            <a class="brand" href="__CONTROLLER__/index">
+
+                <p>&nbsp;&nbsp;想映电影后台管理系统</p>
+                <!--<img src="{$Think.const.ADMIN_IMG_URL}/logo.png" alt="logo"/>-->
+
+            </a>
+
+            <!-- END LOGO -->
+
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+            <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+                <img src="{$Think.const.ADMIN_IMG_URL}/menu-toggler.png" alt="" />
+
+            </a>
+
+            <!-- END RESPONSIVE MENU TOGGLER -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+
+            <ul class="nav pull-right">
+
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+
+                <li class="dropdown user">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                        <span class="username">{$Think.session.a_name}</span>
+
+                        <i class="icon-angle-down"></i>
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li><a id="changelink" href="__MODULE__/Manager/changepwd/a_id/{$Think.session.a_id}" target="subwindow"><i class="icon-user"></i> 修改密码</a></li>
+
+                        <li class="divider"></li>
+
+                        <li><a href="__MODULE__/Manager/logout"><i class="icon-key"></i> 退出</a></li>
+
+                    </ul>
+
+                </li>
+
+                <!-- END USER LOGIN DROPDOWN -->
+
+            </ul>
+
+            <!-- END TOP NAVIGATION MENU -->
+
+        </div>
+
+    </div>
+
+    <!-- END TOP NAVIGATION BAR -->
+
+</div>
+
+<!-- BEGIN CONTAINER -->
+
+<div class="page-container" style="background-color: #3D3D3D">
+
+    <!-- BEGIN SIDEBAR -->
+
+    <div class="page-sidebar sidebarmenu">
+
+        <!-- BEGIN SIDEBAR MENU -->
+
+        <ul class="page-sidebar-menu mainmenu">
+
+            <br><br>
+
+            <li class="start active">
+
+                <a href="__MODULE__/User/index" target="subwindow">
+
+                    <i class="icon-user"></i>
+
+                    <span class="title">用户管理</span>
+
+                    <span class="selected"></span>
+
+                </a>
+
+            </li>
+
+            <li class="">
+
+                <a href="__MODULE__/Movie/index" target="subwindow">
+
+                    <i class="icon-film"></i>
+
+                    <span class="title">电影管理</span>
+
+                </a>
+
+            </li>
+
+            <li class="">
+
+                <a href="__MODULE__/Cinema/index" target="subwindow">
+
+                    <i class="icon-building"></i>
+
+                    <span class="title">影院管理</span>
+
+                </a>
+
+            </li>
+
+            <li class="">
+
+                <a href="__MODULE__/Ticket/index" target="subwindow">
+
+                    <i class="icon-ticket"></i>
+
+                    <span class="title">影票管理</span>
+
+                </a>
+
+            </li>
+
+            <li class="">
+
+                <a href="__MODULE__/Order/index" target="subwindow">
+
+                    <i class="icon-shopping-cart"></i>
+
+                    <span class="title">订单管理</span>
+
+                </a>
+
+            </li>
+
+            <li class="">
+
+                <a href="__MODULE__/Comment/index" target="subwindow">
+
+                    <i class="icon-comments"></i>
+
+                    <span class="title">评论管理</span>
+
+                </a>
+
+            </li>
+
+            <li class="">
+
+                <a href="__MODULE__/Employ/index" target="subwindow">
+
+                    <i class="icon-briefcase"></i>
+
+                    <span class="title">招聘管理</span>
+
+                </a>
+
+            </li>
+
+            <li class="">
+
+                <a href="__MODULE__/Notice/index" target="subwindow">
+
+                    <i class="icon-bullhorn"></i>
+
+                    <span class="title">公告管理</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <!-- END SIDEBAR MENU -->
+
+    </div>
+
+    <!-- END SIDEBAR -->
+
+    <!-- BEGIN PAGE -->
+
+    <iframe id="subwindow" name="subwindow" src="__MODULE__/User/index" frameborder="0" style="border: none;margin-left: 225px"></iframe>
+
+    <!-- END PAGE -->
+
+</div>
+
+<!-- END CONTAINER -->
+
+<!-- BEGIN FOOTER -->
+
+
+    <div class="footer" style="background-color: #3D3D3D">
+
+        <div class="footer-inner">
+
+            2016 &copy; XYCinema
+
+        </div>
+
+    </div>
+
+
+<!-- END FOOTER -->
+
+</div>
+</block>
+<block name="script">
+    <script>
+        $(function(){
+            resetPosition();
+            $(window).resize(resetPosition);
+            $('.mainmenu').on('click','li',function () {
+                if(!$(this).hasClass('start active')){
+                    $('.mainmenu li').removeClass('start active');
+                    $('.mainmenu li span.selected').remove();
+                    $(this).addClass('start active');
+                    $('.mainmenu li > a').append('<span class="selected"></span>');
+                }
+            });
+            $('#changelink').click(function () {
+                $('.mainmenu li').removeClass('start active');
+                $('.mainmenu li span.selected').remove();
+            });
+        });
+
+        function resetPosition(){
+            var contentHeight = window.innerHeight-81;
+            var contentWidth = window.innerWidth-225;
+            $("#subwindow").attr('height',contentHeight);
+            $("#subwindow").attr('width',contentWidth);
+        }
+
+
+    </script>
+</block>

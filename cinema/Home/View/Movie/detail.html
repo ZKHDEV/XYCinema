@@ -1,0 +1,104 @@
+<extend name="./base"/>
+<block name="content">
+    <title>电影详情 - 想映电影院</title>
+
+    <div>
+        <div class="container">
+            <div class="col-md-3">
+                <div id="moviediv" class="text-center">
+                    <img id="moviepic" class="img-responsive" src="{$Think.const.UPLOAD_URL}/{$movie.m_frontcover}" alt=""/>
+                    <div class="btn-group-vertical">
+                        <a href="__MODULE__/Order/ticket/m_id/{$movie.m_id}" class="btn btn-danger btn-lg">选座购票</a>
+                        <notempty name="Think.session.u_id">
+                            <empty name="exiwant">
+                                <a id="wantlink" href="javascript:void(0)" onclick="subwant(this)" mid="{$movie.m_id}" class="btn btn-info btn-lg">我想看</a>
+                                <else/>
+                                <a disabled class="btn btn-info btn-lg">已添加</a>
+                            </empty>
+                        </notempty>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h1>{$movie.m_name}</h1><hr/>
+                <p>导演：{$movie.m_director}</p>
+                <p>主演：{$movie.m_star}</p>
+                <p>类型：{$movie.m_type}</p>
+                <p>国家/地区：{$movie.m_country}</p>
+                <p>语言：{$movie.m_language}</p>
+                <p>版本：{$movie.m_version}</p>
+                <p>上映日期：{$movie.m_showdate}</p>
+                <p>片长：{$movie.m_length}</p>
+                <br/>
+                <h3>影片剧情</h3><hr/>
+                <p>{$movie.m_descride}</p>
+                <br/>
+                <h3>预告片</h3><hr/>
+                <embed src="{$movie.m_advance}" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+                <br/>
+                <notempty name="stages">
+                    <h3>精彩剧照</h3><hr/>
+                    <ul class="list-inline" id="stagelist">
+                        <foreach name="stages" item="stage">
+                            <li><a target="_blank" href="{$Think.const.UPLOAD_URL}/{$stage.s_url}"><img width="195px" src="{$Think.const.UPLOAD_URL}/{$stage.sm_url}" alt=""/></a></li>
+                        </foreach>
+                    </ul>
+                </notempty>
+                <br/>
+                <h3>影评</h3><hr/>
+                <div class="jumbotron commentdiv">
+                    <empty name="Think.session.u_id">
+                        <a href="__MODULE__/Manager/login" class="btn btn-info btn-lg">请 先 登 录</a>
+                        <else/>
+                        <form action="__CONTROLLER__/comment" method="post" autocomplete="off">
+                            <input type="hidden" name="c_movieid" value="{$movie.m_id}">
+                            <textarea id="comtext" name="c_content" class="form-control" rows="5" maxlength="140" placeholder="有你参与更精彩 ！"></textarea>
+                            <button type="submit" class="btn btn-danger btn-lg">提 交</button>
+                        </form>
+                        <notempty name="mycomments">
+                            <br/>
+                            <h4>我的影评</h4>
+                            <hr/>
+                            <foreach name="mycomments" item="comment">
+                                <div>
+                                    <p>{$comment.c_content}</p>
+                                    <p class="pull-right fromp">--- 我 {$comment.c_subtime} &nbsp;&nbsp;&nbsp; <a href="__CONTROLLER__/delete/c_id/{$comment.c_id}">删除</a></p>
+                                </div>
+                                <hr/>
+                            </foreach>
+                        </notempty>
+                    </empty>
+                </div>
+                <notempty name="comments">
+                    <div class="jumbotron commentdiv">
+                        <h4>全部影评</h4>
+                        <hr/>
+                        <foreach name="comments" item="comment">
+                            <div>
+                                <p>{$comment.c_content}</p>
+                                <p class="pull-right fromp">--- {$comment.user} {$comment.c_subtime}</p>
+                            </div>
+                            <hr/>
+                        </foreach>
+                    </div>
+                </notempty>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script">
+    <script>
+        function subwant(target) {
+            var mid=$(target).attr('mid');
+            $.post("/cinema/Home/Movie/wantsee",{"m_id":mid},function (data) {
+                if(data==='ok') {
+                    $("#wantlink").html("已添加");
+                    $("#wantlink").attr("disabled","none");
+                }
+                else{
+                    alert('操作失败，请重试');
+                }
+            });
+        }
+    </script>
+</block>

@@ -1,0 +1,95 @@
+<extend name="./base"/>
+<block name="content">
+    <title>订单详情 - 想映电影院</title>
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <h2 id="vipheader">会员中心</h2>
+                </div>
+                <div id="vipdiv" class="col-md-8">
+                    <div class="col-md-4">
+                        <p>用户名：{$Think.session.u_name}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>绑定手机号：{$Think.session.u_phone}</p>
+                        <p>会员消费积分：{$user.u_points}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>会员级别：
+                            <if condition="$user.u_points lt 100">
+                                铜牌会员
+                                <elseif condition="$user.u_points lt 200"/>银牌会员
+                                <else/>金级会员
+                            </if>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <hr class="grehr"/>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">我的订单</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="__CONTROLLER__/index" class="list-group-item active">我的订单</a>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">个人信息</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="__CONTROLLER__/permsg" class="list-group-item">查看资料</a>
+                            <a href="__CONTROLLER__/changemsg" class="list-group-item">修改资料</a>
+                            <a href="__CONTROLLER__/changepwd" class="list-group-item">修改密码</a>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">我的影片</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="__CONTROLLER__/comment" class="list-group-item">我的影评</a>
+                            <a href="__CONTROLLER__/history" class="list-group-item">我看过的影片</a>
+                            <a href="__CONTROLLER__/wantsee" class="list-group-item">我想看的影片</a>
+                        </div>
+                    </div>
+                    <br/>
+                    <a class="btn btn-warning btn-group-justified" href="__MODULE__/Manager/logout">退出登录</a>
+                </div>
+                <div class="col-md-9">
+                    <hr class="orghr"/>
+                    <h3>订单号：{$order.o_id}</h3>
+                    <h3>电影：{$order.movie}</h3>
+                    <h3>制式：{$order.standard}</h3>
+                    <h3>票数：{$order.ticketnum}</h3>
+                    <h3>影院：{$order.cinema}</h3>
+                    <h3>影厅：{$order.room}</h3>
+                    <h3>座位：{$order.o_seatlist}</h3>
+                    <h3>开场时间：{$order.date} {$order.time}</h3>
+                    <h3>积分：{$order.points}</h3>
+                    <h3>状态：
+                        <if condition="$order.o_state eq 0">未付款
+                            <elseif condition="$order.o_state eq 1"/>已付款
+                            <elseif condition="$order.o_state eq 2"/>已取消
+                            <else/>超时
+                        </if>
+                    </h3>
+                    <notempty name="order.o_paytime">
+                        <h3>付款时间：{$order.o_paytime}</h3>
+                    </notempty>
+                    <h3>总价：{$order.o_price}</h3>
+                    <h3>创建时间：{$order.o_subtime}</h3>
+                    <br/>
+                    <a href="__CONTROLLER__/index" class="btn btn-warning btn-lg">返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="script"></block>
