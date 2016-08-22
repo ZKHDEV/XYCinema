@@ -98,7 +98,7 @@
         <div class="col-md-12">
             <div id="carousel1" class="carousel slide">
                 <div class="carousel-inner">
-                    <?php $__FOR_START_31904__=0;$__FOR_END_31904__=5;for($key=$__FOR_START_31904__;$key < $__FOR_END_31904__;$key+=1){ if($key == 0): ?><div class="item active">
+                    <?php $__FOR_START_30102__=0;$__FOR_END_30102__=5;for($key=$__FOR_START_30102__;$key < $__FOR_END_30102__;$key+=1){ if($key == 0): ?><div class="item active">
                             <?php else: ?>
                             <div class="item"><?php endif; ?>
                         <a href="/cinema/Home/Movie/detail/m_id/<?php echo ($movies[$key]['m_id']); ?>"><img class="posterimg" src="<?php echo (UPLOAD_URL); ?>/<?php echo ($movies[$key]['m_poster']); ?>" alt=""></a>
@@ -137,8 +137,8 @@
         <div class="tab-content">
             <div class="tab-pane fade in active" id="hot">
                 <br><h3 class="text-danger">正在热映：</h3><br>
-                <?php $__FOR_START_89__=0;$__FOR_END_89__=$movierows;for($k=$__FOR_START_89__;$k < $__FOR_END_89__;$k+=1){ ?><div class="row">
-                    <?php $__FOR_START_17663__=4*$k;$__FOR_END_17663__=4*$k+4;for($n=$__FOR_START_17663__;$n < $__FOR_END_17663__;$n+=1){ if(!empty($movies[$n])): ?><div class="col-md-3 col-sm-3 col-xs-3">
+                <?php $__FOR_START_29975__=0;$__FOR_END_29975__=$movierows;for($k=$__FOR_START_29975__;$k < $__FOR_END_29975__;$k+=1){ ?><div class="row">
+                    <?php $__FOR_START_29421__=4*$k;$__FOR_END_29421__=4*$k+4;for($n=$__FOR_START_29421__;$n < $__FOR_END_29421__;$n+=1){ if(!empty($movies[$n])): ?><div class="col-md-3 col-sm-3 col-xs-3">
                                 <div class="thumbnail text-center">
                                     <a href="/cinema/Home/Movie/detail/m_id/<?php echo ($movies[$n]['m_id']); ?>"><img class="movieimg" src="<?php echo (UPLOAD_URL); ?>/<?php echo ($movies[$n]['m_frontcover']); ?>" alt=""></a>
                                     <div class="caption">
@@ -150,8 +150,8 @@
             </div>
             <div class="tab-pane fade" id="coming">
                 <br><h3 class="text-danger">即将上映：</h3><br>
-                <?php $__FOR_START_29726__=0;$__FOR_END_29726__=$wmovierows;for($k=$__FOR_START_29726__;$k < $__FOR_END_29726__;$k+=1){ ?><div class="row">
-                        <?php $__FOR_START_17100__=4*$k;$__FOR_END_17100__=4*$k+4;for($n=$__FOR_START_17100__;$n < $__FOR_END_17100__;$n+=1){ if(!empty($willmovies[$n])): ?><div class="col-md-3 col-sm-3 col-xs-3">
+                <?php $__FOR_START_3332__=0;$__FOR_END_3332__=$wmovierows;for($k=$__FOR_START_3332__;$k < $__FOR_END_3332__;$k+=1){ ?><div class="row">
+                        <?php $__FOR_START_21794__=4*$k;$__FOR_END_21794__=4*$k+4;for($n=$__FOR_START_21794__;$n < $__FOR_END_21794__;$n+=1){ if(!empty($willmovies[$n])): ?><div class="col-md-3 col-sm-3 col-xs-3">
                                     <div class="thumbnail text-center">
                                         <a href="/cinema/Home/Movie/detail/m_id/<?php echo ($willmovies[$n]['m_id']); ?>"><img class="movieimg" src="<?php echo (UPLOAD_URL); ?>/<?php echo ($willmovies[$n]['m_frontcover']); ?>" alt=""></a>
                                         <div class="caption">

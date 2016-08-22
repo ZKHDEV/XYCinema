@@ -1,0 +1,44 @@
+[ 2016-08-22T11:21:04+08:00 ] 127.0.0.1 /cinema/Admin/Manager/verifyimg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2016-08-22T14:53:39+08:00 ] 127.0.0.1 /cinema/Admin/Manager/verifyimg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000609s ]
+

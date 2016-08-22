@@ -1,0 +1,30 @@
+#loginbody {
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: 100% auto;
+}
+
+#logindiv {
+    padding: 50px;
+    background: rgba(0, 64, 128, 0.6);
+    border-radius: 0 0 50px 50px;
+}
+
+#logindiv h1 {
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+#loginform input {
+    margin-bottom: 20px;
+}
+
+#validate {
+    margin-left: -15px;
+}
+
+#valiimg {
+    width: 100px;
+    height: 34px;
+    margin-left: -15px;
+}

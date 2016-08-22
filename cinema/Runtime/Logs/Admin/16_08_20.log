@@ -1,0 +1,356 @@
+[ 2016-08-20T00:36:15+08:00 ] 127.0.0.1 /cinema/admin/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000994s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0098s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.1018s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0066s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.117284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.117386s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001136s ]
+
+[ 2016-08-20T00:36:16+08:00 ] 127.0.0.1 /cinema/Admin/Manager/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0585s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0947s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0389s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0313s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0279s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0334s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0240s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.121635s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.121727s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2016-08-20T00:36:17+08:00 ] 127.0.0.1 /cinema/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0240s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0354s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0203s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `xy_user` WHERE ( u_delflag = 0 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093373s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093472s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001583s ]
+
+[ 2016-08-20T00:36:17+08:00 ] 127.0.0.1 /cinema/Admin/Manager/verifyImg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0471s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0109s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0083s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000841s ]
+
+[ 2016-08-20T00:36:26+08:00 ] 127.0.0.1 /cinema/Admin/Manager/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `xy_admin` WHERE ( a_name='admin' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064260s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064335s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000612s ]
+
+[ 2016-08-20T00:36:29+08:00 ] 127.0.0.1 /cinema/Admin/Manager/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0106s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0091s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.1739s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0336s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0714s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.1120s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008891s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008972s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2016-08-20T00:36:29+08:00 ] 127.0.0.1 /cinema/Admin/Manager/verifyImg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001668s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000728s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000799s ]
+
+[ 2016-08-20T00:36:36+08:00 ] 127.0.0.1 /cinema/Admin/Manager/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `xy_admin` WHERE ( a_name='admin' ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008152s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008213s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2016-08-20T00:36:37+08:00 ] 127.0.0.1 /cinema/Admin/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0076s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035585s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035646s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001110s ]
+
+[ 2016-08-20T00:36:37+08:00 ] 127.0.0.1 /cinema/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xy_user` WHERE ( u_delflag = 0 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000344s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016176s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000677s ]
+
+[ 2016-08-20T00:36:40+08:00 ] 127.0.0.1 /cinema/Admin/Movie/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0110s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0076s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `xy_movie` WHERE ( m_delflag = 0 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052814s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052904s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000800s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2016-08-20T12:54:03+08:00 ] 127.0.0.1 /cinema/Admin/Movie/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+SQL: SHOW COLUMNS FROM `xy_admin` [ RunTime:0.0350s ]
+SQL: SHOW COLUMNS FROM `xy_ticket` [ RunTime:0.0081s ]
+SQL: SHOW COLUMNS FROM `xy_movie` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `xy_cinema` [ RunTime:0.0730s ]
+SQL: SHOW COLUMNS FROM `xy_room` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `xy_order` [ RunTime:0.0101s ]
+SQL: SHOW COLUMNS FROM `xy_user` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `xy_comment` [ RunTime:0.1372s ]
+SQL: SHOW COLUMNS FROM `xy_employ` [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `xy_notice` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `xy_stage` [ RunTime:0.1113s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000202s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000283s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.197857s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.198001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001877s ]
+

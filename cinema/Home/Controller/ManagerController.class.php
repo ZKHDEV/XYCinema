@@ -52,10 +52,10 @@ class ManagerController extends Controller
             'imageH'    =>  40,               // 验证码图片高度
             'imageW'    =>  120,               // 验证码图片宽度
             'length'    =>  4,               // 验证码位数
-            'fontttf'   =>  '4.ttf',              // 验证码字体，不设置随机获取
+            'fontttf'   =>  '4.ttf'              // 验证码字体，不设置随机获取
         );
-        $verify = new \Think\Verify($config);
-        $verify -> entry();
+        $verify=new \Think\Verify($config);
+        $verify->entry();
     }
 
     public function logout()
@@ -112,7 +112,7 @@ class ManagerController extends Controller
                 {
                     session('mobile',null);
                     session('mobile_code',null);
-                    
+
                     $user = new \Model\UserModel();
                     $res = $user->create();
                     if($res)
