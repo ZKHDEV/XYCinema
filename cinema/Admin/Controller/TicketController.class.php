@@ -21,7 +21,7 @@ class TicketController extends BaseController
             $res2 = $this::$order->where("o_ticketid=%d and o_state=1",$ticket['t_id'])->select();
 
             $ticketnum=0;
-            foreach($res2 as $key=>$re)
+            foreach($res2 as $re)
             {
                 $seatarr = explode(';',$re['o_seatlist']);
                 $ticketnum += count($seatarr);
