@@ -91,8 +91,7 @@ class MovieController extends BaseController
     
     public function delwant($m_id)
     {
-        $wantmovieinfo = $this::$wantmovie->field("w_id")->where("w_movieid=%d and w_userid=%d",$m_id,session('u_id'))->find();
-        $res = $this::$wantmovie->deleteByLogical($wantmovieinfo['w_id']);
+        $res = $this::$wantmovie->deletewant($m_id,session('u_id'));
         if($res)
         {
             $this->redirect('Home/User/wantsee');

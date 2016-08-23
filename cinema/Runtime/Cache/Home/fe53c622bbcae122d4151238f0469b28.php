@@ -91,79 +91,93 @@
     </div>
 </div>
 
-<title>想映电影院</title>
+    <title>我想看的影片 - 想映电影院</title>
 
-<div>
-    <div class="row" id="advertising">
-        <div class="col-md-12">
-            <div id="carousel1" class="carousel slide">
-                <div class="carousel-inner">
-                    <?php $__FOR_START_5446__=0;$__FOR_END_5446__=5;for($key=$__FOR_START_5446__;$key < $__FOR_END_5446__;$key+=1){ if($key == 0): ?><div class="item active">
-                            <?php else: ?>
-                            <div class="item"><?php endif; ?>
-                        <a href="/cinema/Home/Movie/detail/m_id/<?php echo ($movies[$key]['m_id']); ?>"><img class="posterimg" src="<?php echo (UPLOAD_URL); ?>/<?php echo ($movies[$key]['m_poster']); ?>" alt=""></a>
-                        <div class="carousel-caption">
-                            <h1><?php echo ($movies[$key]['m_name']); ?></h1>
-                        </div>
-                </div><?php } ?>
-
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <h2 id="vipheader">会员中心</h2>
                 </div>
-                <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel1" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel1" data-slide-to="1"></li>
-                    <li data-target="#carousel1" data-slide-to="2"></li>
-                    <li data-target="#carousel1" data-slide-to="3"></li>
-                    <li data-target="#carousel1" data-slide-to="4"></li>
-                </ol>
+                <div id="vipdiv" class="col-md-8">
+                    <div class="col-md-4">
+                        <p>用户名：<?php echo (session('u_name')); ?></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>绑定手机号：<?php echo (session('u_phone')); ?></p>
+                        <p>会员消费积分：<?php echo ($user["u_points"]); ?></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>会员级别：
+                            <?php if($user["u_points"] < 100): ?>铜牌会员
+                                <?php elseif($user["u_points"] < 200): ?>银牌会员
+                                <?php else: ?>金级会员<?php endif; ?>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <ul id="menulist" class="nav nav-pills nav-justified">
-                    <li class="active"><a href="#hot" data-toggle="tab">正在热映</a></li>
-                    <li><a href="#coming" data-toggle="tab">即将上映</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="tab-content">
-            <div class="tab-pane fade in active" id="hot">
-                <br><h3 class="text-danger">正在热映：</h3><br>
-                <?php $__FOR_START_4871__=0;$__FOR_END_4871__=$movierows;for($k=$__FOR_START_4871__;$k < $__FOR_END_4871__;$k+=1){ ?><div class="row">
-                    <?php $__FOR_START_6749__=4*$k;$__FOR_END_6749__=4*$k+4;for($n=$__FOR_START_6749__;$n < $__FOR_END_6749__;$n+=1){ if(!empty($movies[$n])): ?><div class="col-md-3 col-sm-3 col-xs-3">
-                                <div class="thumbnail text-center">
-                                    <a href="/cinema/Home/Movie/detail/m_id/<?php echo ($movies[$n]['m_id']); ?>"><img class="movieimg" src="<?php echo (UPLOAD_URL); ?>/<?php echo ($movies[$n]['m_frontcover']); ?>" alt=""></a>
-                                    <div class="caption">
-                                        <a class="btn btn-default btn-danger seatbtn" href="/cinema/Home/Order/ticket/m_id/<?php echo ($movies[$n]['m_id']); ?>">选座购票</a>
-                                    </div>
-                                </div>
-                            </div><?php endif; } ?>
-                    </div><?php } ?>
-            </div>
-            <div class="tab-pane fade" id="coming">
-                <br><h3 class="text-danger">即将上映：</h3><br>
-                <?php $__FOR_START_27700__=0;$__FOR_END_27700__=$wmovierows;for($k=$__FOR_START_27700__;$k < $__FOR_END_27700__;$k+=1){ ?><div class="row">
-                        <?php $__FOR_START_16338__=4*$k;$__FOR_END_16338__=4*$k+4;for($n=$__FOR_START_16338__;$n < $__FOR_END_16338__;$n+=1){ if(!empty($willmovies[$n])): ?><div class="col-md-3 col-sm-3 col-xs-3">
+            <br/>
+            <hr class="grehr"/>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">我的订单</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="/cinema/Home/User/index" class="list-group-item">我的订单</a>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">个人信息</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="/cinema/Home/User/permsg" class="list-group-item">查看资料</a>
+                            <a href="/cinema/Home/User/changemsg" class="list-group-item">修改资料</a>
+                            <a href="/cinema/Home/User/changepwd" class="list-group-item">修改密码</a>
+                        </div>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">我的影片</h3>
+                        </div>
+                        <div class="list-group">
+                            <a href="/cinema/Home/User/comment" class="list-group-item">我的影评</a>
+                            <a href="/cinema/Home/User/history" class="list-group-item">我看过的影片</a>
+                            <p class="list-group-item active">我想看的影片</p>
+                        </div>
+                    </div>
+                    <br/>
+                    <a class="btn btn-warning btn-group-justified" href="/cinema/Home/Manager/logout">退出登录</a>
+                </div>
+                <div class="col-md-9">
+                    <h3>想看的影片</h3>
+                    <hr class="orghr"/>
+                    <?php if(!empty($movies)): ?><ul class="list-inline" id="hismovlist">
+                            <?php if(is_array($movies)): foreach($movies as $key=>$movie): ?><li>
                                     <div class="thumbnail text-center">
-                                        <a href="/cinema/Home/Movie/detail/m_id/<?php echo ($willmovies[$n]['m_id']); ?>"><img class="movieimg" src="<?php echo (UPLOAD_URL); ?>/<?php echo ($willmovies[$n]['m_frontcover']); ?>" alt=""></a>
+                                        <h4><?php echo ($movie["m_name"]); ?></h4>
+                                        <a href="/cinema/Home/Movie/detail/m_id/<?php echo ($movie["m_id"]); ?>"><img src="<?php echo (UPLOAD_URL); ?>/<?php echo ($movie["m_frontcover"]); ?>" alt=""></a>
                                         <div class="caption">
-                                            <a class="btn btn-default btn-danger seatbtn" href="/cinema/Home/Order/ticket/m_id/<?php echo ($willmovies[$n]['m_id']); ?>">选座购票</a>
+                                            <div class="col-md-8">
+                                                <a class="btn btn-default btn-danger seatbtn" href="/cinema/Home/Order/ticket/m_id/<?php echo ($movie["m_id"]); ?>">选座购票</a>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <a class="btn btn-link" href="/cinema/Home/Movie/delwant/m_id/<?php echo ($movie["m_id"]); ?>">删除</a>
+                                            </div>
+                                            <div style="clear: both"></div>
                                         </div>
                                     </div>
-                                </div><?php endif; } ?>
-                    </div><?php } ?>
+                                </li><?php endforeach; endif; ?>
+                        </ul>
+                        <?php else: ?>
+                        <h1>你还未添加任何影片！</h1><?php endif; ?>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 <footer>
@@ -182,11 +196,8 @@
 <script src="<?php echo (JS_URL); ?>/initdatepicker.js"></script>
 <script src="<?php echo (JS_URL); ?>/selectorder.js"></script>
 
-    <script>
-        $('#carousel1').carousel({
-            interval: 5000
-        });
-    </script>
+    <script src="<?php echo (JS_URL); ?>/jquery.validate.min.js"></script>
+    <script src="<?php echo (JS_URL); ?>/validate.js"></script>
 
 </body>
 </html>
